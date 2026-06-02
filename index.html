@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Integrado de Investigación - Dr. Pech</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 100px;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 22pt;
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        header p {
+            font-size: 14pt;
+            color: #ffe066;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            opacity: 1;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .main-title-box {
+            background-color: #1e3c72;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-size: 14pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 5px solid #ffe066;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid #2a5298;
+        }
+        .card-intro { border-left-color: #1e3c72; background-color: #f8fafc; }
+        .card-formula { border-left-color: #b91c1c; background-color: #fff8f8; }
+        .card-instrumento { border-left-color: #0d9488; background-color: #f0fdfa; }
+        
+        h2 {
+            color: #1e3c72;
+            font-size: 16pt;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e1e8ed;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        h3 {
+            color: #2a5298;
+            font-size: 13pt;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            border-left: 3px solid #2a5298;
+            padding-left: 10px;
+        }
+        p, li {
+            font-size: 11pt;
+            color: #4a5568;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        .grid-two {
+            display: table;
+            width: 100%;
+            margin-top: 20px;
+            table-layout: fixed;
+        }
+        .col {
+            display: table-cell;
+            width: 50%;
+            padding: 0 15px;
+            vertical-align: top;
+        }
+        .box-rigor {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            height: 100%;
+        }
+        .box-sencillo {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 20px;
+            border-radius: 6px;
+            height: 100%;
+        }
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 9pt;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .badge-sencillo { background: #dcfce7; color: #166534; }
+        
+        .formula-display {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18pt;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 10pt;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        .math {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: bold;
+        }
+        .alert-box {
+            background-color: #fff7ed;
+            border: 1px solid #ffedd5;
+            border-left: 4px solid #ea580c;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 9.5pt;
+            background: #edf2f7;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Valoración económica del trabajo de cuidados en la cadena de valor del maíz</h1>
+        <p>Un enfoque de precios justos y equidad de género para la preservación de maíces nativos</p>
+    </header>
+
+    <div class="container">
+
+        <div class="main-title-box">
+            Protocolo de investigación - Tec- Calkiní, UACAM
+        </div>
+
+        <div class="card card-intro">
+            <h2>1. Introducción y justificación del proyecto</h2>
+            <p>Este proyecto de investigación surge bajo el marco de la convocatoria de <strong>Proyectos de Investigación Científica, Humanística, de Desarrollo Tecnológico e Innovación 2026</strong>. Su propósito medular es visibilizar, medir y otorgar una base financiera sólida al rol de las mujeres rurales en la conservación de la biodiversidad agrícola del estado de Campeche, centrándose de manera específica en la Región del Camino Real (Hecelchakán).</p>
+            
+            <h3>La problemática de la cadena de valor:</h3>
+            <p>Históricamente, el valor de mercado del maíz se calcula considerando únicamente los costos de la semilla, los agroquímicos y el jornal de campo masculino. Sin embargo, el eslabón de transformación artesanal y preparación alimentaria —desarrollado predominantemente por mujeres en el ámbito doméstico— opera como un <strong>subsidio invisible para la reproducción familiar</strong>. Preservar los maíces nativos exige jornadas de trabajo físico extendidas debido a las propiedades biológicas del grano tradicional, una carga que no está contabilizada en los precios comerciales de transferencia.</p>
+            
+            <h3>Metas institucionales:</h3>
+            <ul>
+                <li><strong>Visibilización cuantitativa:</strong> transformar el esfuerzo físico e interrupciones del hogar en métricas estadísticas estandarizadas de uso del tiempo.</li>
+                <li><strong>Justicia económica:</strong> integrar el concepto de <strong>Salario Sombra</strong> para proponer esquemas de precios justos a través de los nodos de economía social (NODESS).</li>
+                <li><strong>Equidad de género:</strong> aportar evidencia científica a los comités evaluadores de la Universidad Autónoma de Campeche (UAC) y el Instituto Tecnológico Superior de Calkiní (ITESCAM) sobre la asimetría en las cargas laborales de cuidados.</li>
+            </ul>
+            <p>Dado que el estudio se vincula a los NODESS, prioriza a mujeres que pertenezcan a una misma cooperativa o comunidad; esto facilitará la supervisión semanal y la futura entrega de resultados para el ajuste de precios justos.</p>
+        </div>
+
+        <div class="card">
+            <h2>2. Enfoque metodológico y diseño de muestreo</h2>
+            <p>La investigación adopta un diseño estrictamente cuantitativo, longitudinal y cuasiexperimental fundamentado en una estructura de Datos de Panel Corto.</p>
+            
+            <div class="grid-two">
+                <div class="col">
+                    <div class="box-rigor">
+                        <span class="badge">Diseño intra-sujeto</span>
+                        <p>Cada unidad doméstica actúa como su propio grupo de control. Al evaluar a la misma mujer procesando diferentes variedades de grano bajo un entorno tecnológico e infraestructura constantes, el modelo logra neutralizar la heterogeneidad no observada de los sujetos, aislando el efecto biológico puro del maíz.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box-sencillo">
+                        <span class="badge badge-sencillo">Explicación</span>
+                        <p>Para asegurar que los datos sean completamente justos, evitamos comparar la velocidad de una mujer rápida contra una lenta. Cada participante compite contra sí misma en días separados: medimos su esfuerzo real usando sus mismas herramientas primero con maíz comprado de paquete y después con maíz nativo. Así, cualquier diferencia de tiempo se deberá únicamente al tipo de grano.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Filtros de selección (Tres requisitos):</h3>
+            <ol>
+                <li><strong>Acceso dual al grano:</strong> las participantes deben tener acceso a ambos tipos de maíz en su rutina ordinaria (siembra de maíces nativos para el autoconsumo y adquisición complementaria de maíz híbrido comercial).</li>
+                <li><strong>Constancia de ciclo completo:</strong> la mujer elegida debe ejecutar directamente o liderar la totalidad de las 5 fases tradicionales: Desgranado y limpieza, Cocer el nixtamal, Lavado (nejayote), Molienda y Tortilleado.</li>
+                <li><strong>Estabilidad tecnológica:</strong> acuerdo de control para operar el mismo tipo de fogón y equipo de molienda durante las semanas de recolección de campo, evitando alterar la variable de capital técnico.</li>
+            </ol>
+
+            <div class="alert-box">
+                <strong>Control del abandono (Attrition rate):</strong> los estudios basados en diarios de tiempo conllevan un alto riesgo de deserción por fatiga. Por ello, el protocolo técnico determina realizar un sobre-reclutamiento preventivo de <strong>24 a 25 mujeres</strong> en lugar de las 20 netas requeridas, blindando los grados de libertad de la regresión final para asegurar entre 80 y 100 observaciones válidas.
+            </div>
+        </div>
+
+        <div class="card card-formula">
+            <h2>3. El Modelo econométrico de efectos fijos</h2>
+            <p>Para validar la hipótesis del proyecto, los datos recolectados se procesan mediante una especificación lineal de panel con estimación por Efectos Fijos, cuya ecuación formal es la siguiente:</p>
+            
+            <div class="formula-display">
+                <span class="math">T<sub>it</sub></span> = &beta;<sub>0</sub> + &beta;<sub>1</sub><span class="math">D<sub>it</sub></span> + &beta;<sub>2</sub><span class="math">P<sub>it</sub></span> + &beta;<sub>3</sub><span class="math">R<sub>it</sub></span> + &beta;<sub>4</sub><span class="math">Mult<sub>it</sub></span> + &mu;<sub>i</sub> + &epsilon;<sub>it</sub>
+            </div>
+
+            <h3>Desglose estadístico y significado práctico</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Término</th>
+                        <th style="width: 40%;">Definición econométrica</th>
+                        <th style="width: 45%;">Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="math">T<sub>it</sub></span></td>
+                        <td><strong>Variable dependiente continua:</strong> productividad temporal de la mujer <span class="math">i</span> en el evento de procesamiento <span class="math">t</span>, expresada estrictamente en <strong>minutos por kilogramo (min/kg)</strong>.</td>
+                        <td>El tiempo real de trabajo humano que cuesta preparar cada kilo de maíz desde el grano seco hasta la tortilla terminada.</td>
+                    </tr>
+                    <tr>
+                        <td>&beta;<sub>0</sub></td>
+                        <td><strong>Intercepto general:</strong> el tiempo base estimado del proceso bajo condiciones homogéneas de referencia.</td>
+                        <td>El tiempo mínimo general que toma preparar cualquier tipo de maíz en circunstancias normales.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="math">D<sub>it</sub></span></td>
+                        <td><strong>Regresor de dureza:</strong> escala ordinal (1 al 5) de la percepción del esfuerzo y la resistencia mecánica del grano durante el proceso de molienda y amasado.</td>
+                        <td>Qué tan duro se siente el grano: un valor de 1 indica suavidad y un valor de 5 representa un grano pesado que causa dolor corporal.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="math">P<sub>it</sub></span></td>
+                        <td><strong>Regresor de plagas:</strong> nivel de presencia de gorgojos o afectaciones biológicas en el lote de maíz bajo análisis.</td>
+                        <td>Indica si el grano vino dañado por insectos, lo que obliga a gastar más tiempo seleccionándolo y limpiándolo.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="math">R<sub>it</sub></span></td>
+                        <td><strong>Regresor de desgrane:</strong> resistencia física que opone el grano al ser removido manualmente del olote.</td>
+                        <td>Mide qué tan difícil estuvo desprender los granos de la mazorca usando las manos limpias.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="math">Mult<sub>it</sub></span></td>
+                        <td><strong>Variable de producción conjunta (Multitasking):</strong> factor de ruido que controla si la jornada se interrumpió por demandas de cuidado simultáneo de niños, enfermos o animales.</td>
+                        <td>Registra si la mujer debió pausar el trabajo con el maíz para atender una emergencia familiar o del hogar.</td>
+                    </tr>
+                    <tr>
+                        <td>&mu;<sub>i</sub></td>
+                        <td><strong>Efectos Fijos del hogar:</strong> término que absorbe la heterogeneidad invariante (edad de la mujer, nivel de estudios y equipamiento fijo de la vivienda).</td>
+                        <td><strong>El escudo estadístico:</strong> congela los datos que no cambian en el mes para que las habilidades personales de cada quien no alteren la medición.</td>
+                    </tr>
+                    <tr>
+                        <td>&epsilon;<sub>it</sub></td>
+                        <td><strong>Error estocástico:</strong> perturbaciones aleatorias o eventos climáticos impredecibles durante el desarrollo de la jornada de trabajo.</td>
+                        <td>Imprevistos inevitables del día, como variaciones de voltaje en el molino o leña húmeda debido al clima.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Interpretación de los coeficientes (Betas):</h3>
+            <p>Los coeficientes &beta; del modelo matemático no son solo números fijos; representan el impacto real y cuantificable en la jornada de la productora. Su análisis se realiza bajo el criterio estadístico <em>ceteris paribus</em> (manteniendo todas las demás variables constantes):</p>
+            <ul>
+                <li><strong>&beta;<sub>1</sub> (Dureza):</strong> Indica cuántos minutos por kilogramo aumenta el tiempo de procesamiento por cada nivel que se incremente en la escala de dureza del grano. Un coeficiente alto demuestra que las variedades nativas mecánicamente más resistentes exigen mayor esfuerzo físico y tiempo de molienda.</li>
+                <li><strong>&beta;<sub>2</sub> (Plagas):</strong> Cuantifica la penalización en tiempo que genera la presencia de gorgojos o afectaciones biológicas. Obliga a la mujer a invertir minutos adicionales en la selección y limpieza manual del grano seco antes de iniciar la cocción.</li>
+                <li><strong>&beta;<sub>3</sub> (Desgrane):</strong> Mide el impacto del esfuerzo necesario para remover los granos del olote. Refleja cómo la morfología de la mazorca criolla afecta directamente la productividad marginal del tiempo inicial de trabajo.</li>
+                <li><strong>&beta;<sub>4</sub> (Multitasking / Producción Conjunta):</strong> Es un indicador crítico para la economía del cuidado. Mide el costo de fricción temporal; es decir, cuántos minutos por kilogramo se pierden o se suman al proceso debido a las interrupciones forzadas para atender simultáneamente a niños, animales o enfermos. Captura científicamente cómo el rol de cuidados fragmenta e invisibiliza el tiempo de la mujer en el entorno rural.</li>
+            </ul>
+            <div class="grid-two" style="margin-top: 25px;">
+                <div class="col">
+                    <div class="box-rigor">
+                        <span class="badge">Sustento contra el sesgo</span>
+                        <p>El uso del parámetro &mu;<sub>i</sub> anula la posibilidad de incurrir en un <em>sesgo por variable omitida</em>. Elementos intangibles como la destreza manual o el tiro calórico del fogón quedan fijos dentro del estimador, garantizando que los coeficientes parciales &beta;<sub>1</sub>, &beta;<sub>2</sub> y &beta;<sub>3</sub> representen el impacto analítico neto de la naturaleza biológica del grano.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box-sencillo">
+                        <span class="badge badge-sencillo">Explicación</span>
+                        <p>Los maíces nativos de Campeche suelen ser más duros, tener más cascarilla o ser susceptibles a insectos que los híbridos de tienda. Al usar esta fórmula matemática, logramos calcular con total precisión cuántos minutos exactos de cansancio y esfuerzo corporal añade cada una de estas características. Esto demuestra científicamente el costo real que asumen las mujeres por resguardar la semilla nativa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-instrumento">
+            <h2>4. Instrumentos técnicos y cronograma operativo de campo</h2>
+            <p>La consistencia de los datos descansa en la sincronización del <strong>Cuestionario de Línea Base</strong> y los <strong>Diarios de Uso del Tiempo</strong>.</p>
+            
+            <h3>Criterio operativo de "trabajo activo":</h3>
+            <p>Para evitar sobreestimaciones artificiales, el periodo de reposo de la nixtamalización (maíz descansando toda la noche en agua con cal) <strong>queda explícitamente excluido del cálculo</strong>. El reloj corre únicamente cuando el cuerpo de la mujer ejecuta tareas directas de atención o supervisión física.</p>
+
+            <h3>Cronograma del levantamiento de campo (6 Semanas de Duración):</h3>
+            <ol>
+                <li><strong>Semana 1: reclutamiento e instrumento inicial.</strong> Aplicación del <strong>Cuestionario de Línea Base</strong> estructurado en cuatro bloques (Perfil Demográfico, Composición y Cuidados, Economía y Subsistencia, e Infraestructura de la Vivienda). Se formalizan los consentimientos informados y se entrega la báscula digital.</li>
+                <li><strong>Semana 2: capacitación y prueba piloto.</strong> Taller grupal para estandarizar el registro en kilogramos y gramos. Se corre una semana piloto de práctica para eliminar el <em>efecto Hawthorne</em> (modificación de conducta generada al sentirse observada).</li>
+                <li><strong>Semanas 3 y 4: bloque de maíz híbrido.</strong> Registro formal de al menos dos eventos de procesamiento empleando maíz comercial blanco de tienda.</li>
+                <li><strong>Semanas 5 y 6: bloque de maíz nativo.</strong> Las mismas participantes procesan el grano criollo de sus propias cosechas tradicionales, anotando tiempos e indicadores bajo idéntica metodología.</li>
+            </ol>
+
+            <h3>Fases obligatorias de registro en el diario físico:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Etapa Involucrada</th>
+                        <th>Descripción Operativa del Diario</th>
+                        <th>Vinculación Teórica y de Control</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Desgranado y limpieza</strong></td>
+                        <td>Anotación exacta de hora de inicio y fin del desprendimiento manual del grano y remoción de impurezas.</td>
+                        <td>Alimenta de forma directa al regresor de resistencia al desgrane (<span class="math">R<sub>it</sub></span>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Cocer el nixtamal</strong></td>
+                        <td>Tiempo dedicado a encender el fuego, atizar el fogón de leña o controlar la hornilla, vigilando activamente la olla.</td>
+                        <td>Mide la transferencia térmica activa; detiene el cronómetro si la mujer se ausenta de la zona de cocción.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Lavado (nejayote)</strong></td>
+                        <td>Minutos transcurridos en enjuagar el nixtamal en colador, tallar el grano y remover el exceso de hollejo.</td>
+                        <td>Captura el esfuerzo extra que exigen los granos nativos con capas gruesas de cascarilla.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Molienda</strong></td>
+                        <td>Tiempo neto de procesamiento mecánico utilizando el molino manual o el motor doméstico.</td>
+                        <td>Se contrasta directamente contra el regresor ordinal de dureza física (<span class="math">D<sub>it</sub></span>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Tortilleado</strong></td>
+                        <td>Elaboración de las tortillas (a mano o prensa), control del comal y cocción completa.</td>
+                        <td>Fase de cierre operativo indispensable para validar la posterior monetización del <strong>Salario Sombra</strong>.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-box" style="background-color: #f0fdf4; border-left-color: #16a34a; border-style: solid; border-width: 1px 1px 1px 4px; border-color: #bbf7d0 #bbf7d0 #bbf7d0 #16a34a;">
+                <strong>Regla de Integridad en la Captura:</strong> Si una participante olvida registrar un dato temporal, la guía del taller instruye explícitamente <strong>no inventar la información</strong>. El evento se procesa estadísticamente como una observación faltante controlada, resguardando la honestidad y la transparencia científica de la base final.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Instituto Tecnológico Superior de Calkiní | Universidad Autónoma de Campeche | Convocatoria de Investigación Científica 2026
+    </footer>
+
+</body>
+</html>
