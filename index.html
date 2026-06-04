@@ -344,18 +344,18 @@
 <h3>Soporte tecnológico y procesamiento de datos:</h3>
             <p>El procesamiento microeconométrico de los Datos de Panel Corto se ejecutará utilizando el software estadístico especializado <strong>R y/o STATA</strong>, herramientas idóneas para la estimación de modelos de Efectos Fijos con matrices de datos longitudinales. El análisis digital e indexación de los diarios de tiempo se llevará a cabo por <strong>El Dr. Adrián Eduardo Pech Quijano, Profesor e Investigador de la Universidad Autónoma de Campeche</strong>, garantizando el resguardo seguro y la consistencia computacional de las variables analizadas.</p>
 <div style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
-                <h3 style="color: #b91c1c; border-left-color: #b91c1c;">Notas Metodológicas Avanzadas (Para Defensa del Protocolo):</h3>
+                <h3 style="color: #b91c1c; border-left-color: #b91c1c;">Notas Metodológicas:</h3>
                 
-                <p><strong>1. El Fundamento del Modelo de Efectos Fijos (FE):</strong> <br>
+                <p><strong>1. El Fundamento del modelo de Efectos Fijos (FE):</strong> <br>
                 Este modelo es la elección óptima para trabajar con Datos de Panel Corto (pocas semanas, muchos sujetos). Su principal ventaja econométrica es que permite controlar toda la <em>heterogeneidad no observada</em> de cada hogar (&mu;<sub>i</sub>). Es decir, captura e incorpora de forma automática todas aquellas características únicas de las mujeres que no cambian a lo largo del mes (como su destreza manual innata, su nivel de motivación, su edad o el tiro calórico específico de su fogón), impidiendo que estas variables invisibles contaminen los resultados.</p>
                 
-                <p><strong>2. El Mecanismo Matemático - Transformación Intragrupo (Within Transformation):</strong> <br>
+                <p><strong>2. El Mecanismo matemático - Transformación Intragrupo (Within Transformation):</strong> <br>
                 El software estadístico (R o STATA) opera calculando la media temporal de cada variable para cada mujer y restándosela a cada observación diaria. Mediante este centrado respecto a la media, el parámetro fijo &mu;<sub>i</sub> se elimina matemáticamente de la ecuación. En consecuencia, <strong>el modelo no compara a una mujer rápida contra una lenta</strong>; compara a cada participante contra sí misma en días diferentes, actuando cada unidad doméstica como su propio grupo de control puro.</p>
                 
-                <p><strong>3. Eliminación del Sesgo por Variable Omitida:</strong> <br>
+                <p><strong>3. Eliminación del sesgo por variable omitida:</strong> <br>
                 En una regresión tradicional por Mínimos Cuadrados Ordinarios (MCO), si encontráramos que el maíz nativo toma más tiempo, un evaluador crítico podría argumentar que el retraso se debe a que las usuarias de maíz nativo tienen fogones más antiguos o menor fuerza física. Al aplicar Efectos Fijos, toda esa variabilidad fija queda congelada e integrada en el estimador, garantizando que los coeficientes parciales &beta;<sub>1</sub>, &beta;<sub>2</sub>, &beta;<sub>3</sub> y &beta;<sub>4</sub> reflejen un impacto limpio, neto y estrictamente causal.</p>
                 
-                <p><strong>4. Requisitos Críticos de Viabilidad en Campo:</strong> <br>
+                <p><strong>4. Requisitos críticos de viabilidad en campo:</strong> <br>
                 Para salvaguardar la consistencia matemática del modelo, se deben vigilar dos condiciones en las comunidades: 
                 a) <em>Variabilidad temporal obligatoria:</em> Las mujeres deben procesar forzosamente ambos tipos de maíz durante el estudio (híbrido en las semanas 2-3 y nativo en las 4-5), ya que si un sujeto solo usara una variedad, sus datos se borrarían por completo durante la transformación intragrupo. 
                 b) <em>Constancia tecnológica:</em> El capital técnico (tipo de molino y fogón) debe permanecer estrictamente idéntico durante todo el mes para evitar alterar la variable fija del hogar.</p>
